@@ -3,57 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simulateur de budget mensuel pour les étudiants à Bordeaux.">
     <title>Simulateur budget - Guide de l'étudiant à Bordeaux</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+    <script src="../js/budget.js" defer></script>
 </head>
 <body>
+
     <header class="site-header">
-        <a href="index.html" class="site-title">Guide de l'étudiant à Bordeaux</a>
-        <nav class="main-nav">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="Logo du guide" width="46" height="46">
+            <span>Guide de l'étudiant à Bordeaux</span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="housing.html">Logement</a></li>
                 <li><a href="transport.html">Transports</a></li>
                 <li><a href="savings.html">Économies</a></li>
-                <li><a href="budget.html">Simulateur budget</a></li>
+                <li><a href="budget.html" aria-current="page">Simulateur budget</a></li>
             </ul>
         </nav>
+        <div class="header-tools">
+            <button type="button" class="icon-button" id="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+            <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
     </header>
- 
-    <main class="page-container">
-        <section class="hero-card">
-            <div class="hero-content">
-                <span class="hero-subtitle">SIMULATEUR DE BUDGET</span>
-                <h1>Calcule<br>ton budget.</h1>
-                <p>Estime tes dépenses mensuelles et<br>gère ton argent facilement.</p>
-            </div>
+
+    <main>
+        <section class="page-intro">
+            <h1>Simulateur de budget</h1>
+            <p>Entre tes revenus et tes dépenses du mois pour connaître ton reste à vivre.</p>
         </section>
 
-        <section class="home-sections">
-            <h2>CALCULE TES DÉPENSES</h2>
-            <div class="cards-grid">
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Loyer</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Nourriture</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Transport</h3></div>
-                </a>
+        <section>
+            <h2>Mon mois en chiffres</h2>
+            <form method="post" name="Budget" action="#" id="budget-form" onsubmit="return false">
+                <fieldset id="incomes">
+                    <legend>Mes revenus</legend>
+                    <div class="form-row">
+                        <label for="aid">Bourse et APL (€)</label>
+                        <input type="number" id="aid" name="aid" min="0" step="1" placeholder="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="job">Job étudiant (€)</label>
+                        <input type="number" id="job" name="job" min="0" step="1" placeholder="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="family">Aide de la famille (€)</label>
+                        <input type="number" id="family" name="family" min="0" step="1" placeholder="0">
+                    </div>
+                </fieldset>
+                <fieldset id="expenses">
+                    <legend>Mes dépenses</legend>
+                    <div class="form-row">
+                        <label for="rent">Loyer (€)</label>
+                        <input type="number" id="rent" name="rent" min="0" step="1" placeholder="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="transport">Transports (€)</label>
+                        <input type="number" id="transport" name="transport" min="0" step="1" placeholder="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="food">Courses et repas (€)</label>
+                        <input type="number" id="food" name="food" min="0" step="1" placeholder="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Téléphone et internet (€)</label>
+                        <input type="number" id="phone" name="phone" min="0" step="1" placeholder="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="leisure">Sorties et loisirs (€)</label>
+                        <input type="number" id="leisure" name="leisure" min="0" step="1" placeholder="0">
+                    </div>
+                </fieldset>
+                <p id="budget-message" class="form-message" aria-live="polite" hidden></p>
+                <div class="form-buttons">
+                    <input type="button" value="Calculer mon budget" id="calculate-button" onclick="calculateBudget()">
+                    <input type="reset" value="Vider le formulaire">
+                </div>
+            </form>
+        </section>
+
+        <section id="result-section" hidden>
+            <h2>Mon résultat</h2>
+            <p class="budget-result" id="budget-summary"></p>
+            <div class="bar-chart" id="bar-chart"></div>
+        </section>
+
+        <section>
+            <h2>Historique de mes simulations</h2>
+            <div class="table-wrapper">
+                <table id="result">
+                    <caption>Résultats des simulations (5 maximum)</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Essai</th>
+                            <th scope="col">Revenus</th>
+                            <th scope="col">Dépenses</th>
+                            <th scope="col">Reste à vivre</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
+            <p><input type="button" value="Effacer l'historique" id="clear-history"></p>
         </section>
     </main>
- 
+
     <footer class="site-footer">
-        <nav>
+        <nav class="footer-nav" aria-label="Navigation du bas de page">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
                 <li><a href="about.html">À propos</a></li>
             </ul>
         </nav>
-        <p>Projet TI504N - Efrei Bordeaux - 2026</p>
+        <p>&copy; <span id="year">2026</span> Joresse Brandy Fangouo Tatsing &amp; Roua - Projet TI504N - Efrei Bordeaux</p>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+
 </body>
 </html>
