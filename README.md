@@ -7,7 +7,7 @@ Site informatif pour les étudiants qui arrivent à Bordeaux : logement, transpo
 ## Membres
 
 - Joresse Brandy Fangouo Tatsing : accueil (carrousel, chiffres animés, chatbot), page Logement, simulateur de budget
-- Roua : maquette Figma, pages Transports, Économies et À propos (formulaire de contact), mode sombre et menu mobile
+- Roua Mihrab: maquette Figma, pages Transports, Économies et À propos (formulaire de contact), mode sombre et menu mobile
 - Ensemble : header, footer et feuille de style commune
 
 ## Technologies
