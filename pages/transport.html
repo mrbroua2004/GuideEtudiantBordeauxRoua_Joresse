@@ -3,57 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Se déplacer à Bordeaux : tram, bus, BAT³, vélo et tarifs du réseau TBM.">
     <title>Transports - Guide de l'étudiant à Bordeaux</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
+
     <header class="site-header">
-        <a href="index.html" class="site-title">Guide de l'étudiant à Bordeaux</a>
-        <nav class="main-nav">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="Logo du guide" width="46" height="46">
+            <span>Guide de l'étudiant à Bordeaux</span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="housing.html">Logement</a></li>
-                <li><a href="transport.html">Transports</a></li>
+                <li><a href="transport.html" aria-current="page">Transports</a></li>
                 <li><a href="savings.html">Économies</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
             </ul>
         </nav>
+        <div class="header-tools">
+            <button type="button" class="icon-button" id="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+            <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
     </header>
- 
-    <main class="page-container">
-        <section class="hero-card">
-            <div class="hero-content">
-                <span class="hero-subtitle">SE DÉPLACER À BORDEAUX</span>
-                <h1>Bouge<br>facilement.</h1>
-                <p>Tramway, bus, vélo : découvre les meilleures<br>options pour tes trajets quotidiens.</p>
+
+    <main>
+        <section class="page-intro">
+            <h1>Se déplacer à Bordeaux</h1>
+            <p>Bordeaux se parcourt facilement sans voiture grâce au réseau TBM.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>Le réseau TBM</h2>
+            <p>TBM (Transports Bordeaux Métropole) regroupe plusieurs moyens de transport avec les mêmes tickets :</p>
+            <ul>
+                <li><strong>Le tram</strong> : 4 lignes (A, B, C et D) qui traversent la ville.</li>
+                <li><strong>Le bus</strong> : il complète le tram dans tous les quartiers.</li>
+                <li><strong>Le BAT³</strong> : des navettes fluviales pour traverser la Garonne.</li>
+                <li><strong>Le vélo en libre-service</strong> : des stations un peu partout dans la ville.</li>
+            </ul>
+            <h3>Notre conseil</h3>
+            <p>Installe l'application TBM : horaires en temps réel, itinéraires et tickets sur ton téléphone.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>Obtenir son abonnement en 3 étapes</h2>
+            <ol>
+                <li>Préparer ses documents
+                    <ul>
+                        <li>Une pièce d'identité</li>
+                        <li>Une photo d'identité</li>
+                        <li>Un justificatif si on a droit à un tarif réduit</li>
+                    </ul>
+                </li>
+                <li>Créer son compte
+                    <ul>
+                        <li>Sur le site <a href="https://www.infotbm.com">infotbm.com</a></li>
+                        <li>Ou en agence TBM</li>
+                    </ul>
+                </li>
+                <li>Choisir sa formule
+                    <ul>
+                        <li>Au mois ou à l'année</li>
+                        <li>Tarifs réduits pour les jeunes</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section class="reveal">
+            <h2>Les tarifs</h2>
+            <div class="table-wrapper">
+                <table>
+                    <caption>Principaux titres de transport TBM</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Pour qui ?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ticket 1 voyage</td>
+                            <td>1,90 €</td>
+                            <td>Trajets occasionnels</td>
+                        </tr>
+                        <tr>
+                            <td>Abonnement jeunes</td>
+                            <td>Tarif réduit</td>
+                            <td>Étudiants qui prennent le tram tous les jours</td>
+                        </tr>
+                        <tr>
+                            <td>BAT³</td>
+                            <td>Inclus dans les titres TBM</td>
+                            <td>Traverser la Garonne</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Tarifs à vérifier sur infotbm.com avant tout achat.</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </section>
 
-        <section class="home-sections">
-            <h2>LES MOYENS DE TRANSPORT</h2>
-            <div class="cards-grid">
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Tramway & Bus</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Vélos (VCUB)</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Abonnements</h3></div>
-                </a>
+        <section class="reveal">
+            <h2>Et le vélo ?</h2>
+            <div class="highlight">
+                <p>Bordeaux est une ville plutôt plate avec de nombreuses pistes cyclables : le vélo est souvent le moyen le plus rapide et le moins cher pour aller en cours.</p>
             </div>
         </section>
     </main>
- 
+
     <footer class="site-footer">
-        <nav>
+        <nav class="footer-nav" aria-label="Navigation du bas de page">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
                 <li><a href="about.html">À propos</a></li>
             </ul>
         </nav>
-        <p>Projet TI504N - Efrei Bordeaux - 2026</p>
+        <p>&copy; <span id="year">2026</span> Joresse Brandy Fangouo Tatsing &amp; Roua - Projet TI504N - Efrei Bordeaux</p>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+
 </body>
 </html>
