@@ -3,59 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide pratique pour les étudiants à Bordeaux : logement, transports, économies et simulateur de budget.">
     <title>Accueil - Guide de l'étudiant à Bordeaux</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/home.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
 </head>
 <body>
+
     <header class="site-header">
-        <a href="index.html" class="site-title">Guide de l'étudiant à Bordeaux</a>
-        <nav class="main-nav">
+        <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="Logo du guide" width="46" height="46">
+            <span>Guide de l'étudiant à Bordeaux</span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="housing.html">Logement</a></li>
-                <li><a href="transport.html">Transports</a></li>
-                <li><a href="savings.html">Économies</a></li>
-                <li><a href="budget.html">Simulateur budget</a></li>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
+                <li><a href="pages/housing.html">Logement</a></li>
+                <li><a href="pages/transport.html">Transports</a></li>
+                <li><a href="pages/savings.html">Économies</a></li>
+                <li><a href="pages/budget.html">Simulateur budget</a></li>
             </ul>
         </nav>
+        <div class="header-tools">
+            <button type="button" class="icon-button" id="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+            <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
     </header>
- 
-    <main class="page-container">
-        <section class="hero-card">
-            <img src="img/PBordeaux .jpg" alt="Bordeaux" class="hero-img">
-            <div class="hero-content">
-                <span class="hero-subtitle">BIENVENUE À BORDEAUX</span>
-                <h1>Ta vie étudiante<br>commence ici.</h1>
-                <p>Tous les conseils pour étudier, vivre<br>et profiter de Bordeaux.</p>
-                <a href="housing.html" class="btn-primary">Découvrir le guide</a>
+
+    <main>
+        <section class="page-intro" id="intro">
+            <h1>Bienvenue à Bordeaux !</h1>
+            <p>Le guide fait par des étudiants, pour les étudiants : se loger, se déplacer et vivre sans se ruiner.</p>
+        </section>
+
+        <section class="carousel" id="carousel" aria-label="Diaporama des rubriques">
+            <div class="slide slide-1 active">
+                <h2>Trouver son logement</h2>
+                <p>CROUS, résidences, colocation : les solutions et les aides pour se loger.</p>
+                <a href="pages/housing.html" class="button">Voir le logement</a>
+            </div>
+            <div class="slide slide-2">
+                <h2>Se déplacer facilement</h2>
+                <p>Tram, bus, bateau et vélo : le réseau TBM expliqué simplement.</p>
+                <a href="pages/transport.html" class="button">Voir les transports</a>
+            </div>
+            <div class="slide slide-3">
+                <h2>Calculer son budget</h2>
+                <p>Revenus, loyer, courses : découvre ton reste à vivre en un clic.</p>
+                <a href="pages/budget.html" class="button">Lancer le simulateur</a>
+            </div>
+            <button type="button" class="carousel-button prev" id="carousel-prev" aria-label="Diapositive précédente">‹</button>
+            <button type="button" class="carousel-button next" id="carousel-next" aria-label="Diapositive suivante">›</button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </section>
+
+        <section class="reveal">
+            <h2>Bordeaux en chiffres</h2>
+            <div class="stats">
+                <div>
+                    <span class="stat-number" data-target="100000">0</span>
+                    <span>étudiants environ dans la métropole</span>
+                </div>
+                <div>
+                    <span class="stat-number" data-target="4">0</span>
+                    <span>lignes de tram (A, B, C et D)</span>
+                </div>
+                <div>
+                    <span class="stat-number" data-target="6">0</span>
+                    <span>pages pour tout savoir</span>
+                </div>
             </div>
         </section>
 
-        <section class="home-sections">
-            <h2>QUE TU VEUX DÉCOUVRIR ?</h2>
+        <section class="reveal">
+            <h2>Que veux-tu découvrir ?</h2>
             <div class="cards-grid">
-                <a href="transport.html" class="home-card-link">
-                    <div class="home-card-small"><h3>Transport</h3></div>
+                <a href="pages/housing.html" class="card">
+                    <span class="card-icon" aria-hidden="true">🏠</span>
+                    <h3>Logement</h3>
+                    <p>Types de logement, loyers et aides au logement.</p>
                 </a>
-                <a href="housing.html" class="home-card-link">
-                    <div class="home-card-small"><h3>Logement</h3></div>
+                <a href="pages/transport.html" class="card">
+                    <span class="card-icon" aria-hidden="true">🚋</span>
+                    <h3>Transports</h3>
+                    <p>Tram, bus, BAT³ et vélo : le réseau TBM.</p>
                 </a>
-                <a href="savings.html" class="home-card-link">
-                    <div class="home-card-small"><h3>Economie</h3></div>
+                <a href="pages/savings.html" class="card">
+                    <span class="card-icon" aria-hidden="true">💰</span>
+                    <h3>Économies</h3>
+                    <p>Aides financières, repas pas chers et astuces au quotidien.</p>
+                </a>
+                <a href="pages/budget.html" class="card">
+                    <span class="card-icon" aria-hidden="true">🧮</span>
+                    <h3>Simulateur budget</h3>
+                    <p>Calcule ce qu'il te reste chaque mois.</p>
                 </a>
             </div>
         </section>
+
+        <section class="reveal" id="chatbot">
+            <h2>Pose ta question à l'assistant</h2>
+            <p>Notre petit assistant répond aux questions fréquentes des étudiants sur Bordeaux.</p>
+            <div id="chat-box" aria-live="polite"></div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ex : comment trouver un logement ?" aria-label="Ta question">
+                <button type="button" class="button" id="send-button" onclick="fetchJSON('json/intents.json')">Envoyer</button>
+            </div>
+            <div class="chat-suggestions" id="chat-suggestions">
+                <button type="button" data-question="Où manger pas cher ?">Où manger pas cher ?</button>
+                <button type="button" data-question="Combien coûte le tram ?">Combien coûte le tram ?</button>
+                <button type="button" data-question="Comment avoir les APL ?">Comment avoir les APL ?</button>
+            </div>
+        </section>
     </main>
- 
+
     <footer class="site-footer">
-        <nav>
+        <nav class="footer-nav" aria-label="Navigation du bas de page">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="budget.html">Simulateur budget</a></li>
-                <li><a href="about.html">À propos</a></li>
+                <li><a href="pages/budget.html">Simulateur budget</a></li>
+                <li><a href="pages/about.html">À propos</a></li>
             </ul>
         </nav>
-        <p>Projet TI504N - Efrei Bordeaux - 2026</p>
+        <p>&copy; <span id="year">2026</span> Joresse Brandy Fangouo Tatsing &amp; Roua - Projet TI504N - Efrei Bordeaux</p>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+
 </body>
 </html>
