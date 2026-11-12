@@ -305,7 +305,7 @@ section {
     background-color: rgba(46, 125, 79, 0.1);
 }
 
-/* Photo du miroir d'eau (accueil) */
+
 .hero-photo {
     position: relative;
     margin: 0 0 25px;
@@ -879,7 +879,7 @@ textarea:focus {
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 @keyframes fadeUp {
