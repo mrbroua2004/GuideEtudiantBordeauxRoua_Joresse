@@ -380,7 +380,7 @@ section {
 }
 
 .slide-1 {
-    background-image: linear-gradient(rgba(90, 21, 41, 0.75), rgba(90, 21, 41, 0.75)), url("../img/PBordeaux.jpg");
+    background-image: linear-gradient(rgba(90, 21, 41, 0.75), rgba(90, 21, 41, 0.75)), url("../img/miroir-eau.jpg");
     background-color: var(--wine);
 }
 
