@@ -3,57 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Économiser quand on est étudiant à Bordeaux : aides financières, repas pas chers, courses et job étudiant.">
     <title>Économies - Guide de l'étudiant à Bordeaux</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+    <script src="../js/savings.js" defer></script>
 </head>
 <body>
+
     <header class="site-header">
-        <a href="index.html" class="site-title">Guide de l'étudiant à Bordeaux</a>
-        <nav class="main-nav">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="Logo du guide" width="46" height="46">
+            <span>Guide de l'étudiant à Bordeaux</span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="housing.html">Logement</a></li>
                 <li><a href="transport.html">Transports</a></li>
-                <li><a href="savings.html">Économies</a></li>
+                <li><a href="savings.html" aria-current="page">Économies</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
             </ul>
         </nav>
+        <div class="header-tools">
+            <button type="button" class="icon-button" id="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+            <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
     </header>
- 
-    <main class="page-container">
-        <section class="hero-card">
-            <div class="hero-content">
-                <span class="hero-subtitle">FAIRE DES ÉCONOMIES</span>
-                <h1>Ménage<br>ton budget.</h1>
-                <p>Bons plans, réductions étudiantes et astuces<br>pour économiser au quotidien.</p>
+
+    <main>
+        <section class="page-intro">
+            <h1>Économiser au quotidien</h1>
+            <p>Aides financières, repas pas chers et astuces pour finir le mois sereinement.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>L'astuce du jour</h2>
+            <p class="tip-box" id="tip-box" aria-live="polite">Clique sur le bouton pour découvrir une astuce.</p>
+            <p><input type="button" value="Nouvelle astuce" id="tip-button"></p>
+        </section>
+
+        <section class="reveal">
+            <h2>Les aides financières</h2>
+            <ul>
+                <li>La <strong>bourse sur critères sociaux</strong> : demande à faire chaque année avec le dossier social étudiant sur <a href="https://www.messervices.etudiant.gouv.fr">messervices.etudiant.gouv.fr</a>.</li>
+                <li>Les <strong>aides d'urgence du CROUS</strong> en cas de difficulté imprévue.</li>
+                <li>Le <strong>service social</strong> du CROUS et de l'école pour être accompagné.</li>
+            </ul>
+        </section>
+
+        <section class="reveal">
+            <h2>Manger pas cher</h2>
+            <p>Les restaurants universitaires du CROUS proposent des repas complets à petit prix.</p>
+            <div class="table-wrapper">
+                <table>
+                    <caption>Comparatif du prix d'un repas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Option</th>
+                            <th scope="col">Prix indicatif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Restaurant universitaire (CROUS)</td>
+                            <td>3,30 € (1 € pour les boursiers)</td>
+                        </tr>
+                        <tr>
+                            <td>Cuisiner soi-même</td>
+                            <td>2 à 3 €</td>
+                        </tr>
+                        <tr>
+                            <td>Sandwich en boulangerie</td>
+                            <td>5 à 7 €</td>
+                        </tr>
+                        <tr>
+                            <td>Fast-food</td>
+                            <td>10 € environ</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Prix indicatifs, à vérifier sur le site du CROUS.</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </section>
 
-        <section class="home-sections">
-            <h2>NOS ASTUCES ÉCONOMIES</h2>
-            <div class="cards-grid">
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Réductions étudiantes</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Bons plans restos</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Courses pas chères</h3></div>
-                </a>
-            </div>
+        <section class="reveal">
+            <h2>Courses malines</h2>
+            <ul>
+                <li>Faire un tour au <strong>marché des Capucins</strong> en fin de matinée pour les fruits et légumes.</li>
+                <li>Utiliser les applications anti-gaspillage pour des paniers à prix réduit.</li>
+                <li>Faire une liste avant d'aller au supermarché et cuisiner en grande quantité.</li>
+            </ul>
+        </section>
+
+        <section class="reveal">
+            <h2>Trouver un job étudiant</h2>
+            <p>Un petit job permet de compléter son budget sans trop empiéter sur les cours :</p>
+            <ul>
+                <li>La plateforme <a href="https://www.jobaviz.fr">Jobaviz</a> du CROUS.</li>
+                <li>Le babysitting, les cours particuliers ou l'aide aux devoirs.</li>
+                <li>Les offres affichées par le service des relations entreprises de l'école.</li>
+            </ul>
         </section>
     </main>
- 
+
     <footer class="site-footer">
-        <nav>
+        <nav class="footer-nav" aria-label="Navigation du bas de page">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
                 <li><a href="about.html">À propos</a></li>
             </ul>
         </nav>
-        <p>Projet TI504N - Efrei Bordeaux - 2026</p>
+        <p>&copy; <span id="year">2026</span> Joresse Brandy Fangouo Tatsing &amp; Roua - Projet TI504N - Efrei Bordeaux</p>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+
 </body>
 </html>
