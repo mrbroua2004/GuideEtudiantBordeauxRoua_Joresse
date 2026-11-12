@@ -1,0 +1,191 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "bonjour",
+                "salut",
+                "hello",
+                "coucou",
+                "bonsoir"
+            ],
+            "responses": [
+                "Bonjour ! Pose-moi une question sur le logement, les transports ou les économies à Bordeaux.",
+                "Salut ! Je peux t'aider à te loger, te déplacer ou économiser à Bordeaux."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "merci",
+                "super",
+                "genial"
+            ],
+            "responses": [
+                "Avec plaisir ! Bonne vie étudiante à Bordeaux.",
+                "De rien, n'hésite pas si tu as d'autres questions !"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "au revoir",
+                "bye",
+                "a plus tard",
+                "ciao"
+            ],
+            "responses": [
+                "À bientôt ! Profite bien de Bordeaux."
+            ]
+        },
+        {
+            "tag": "about",
+            "patterns": [
+                "qui es-tu",
+                "qui es tu",
+                "createur",
+                "equipe"
+            ],
+            "responses": [
+                "Je suis l'assistant du guide, créé par Brandy et Roua pour leur projet à l'Efrei Bordeaux."
+            ]
+        },
+        {
+            "tag": "housing",
+            "patterns": [
+                "logement",
+                "loger",
+                "appartement",
+                "studio",
+                "colocation",
+                "habiter"
+            ],
+            "responses": [
+                "Pour te loger, regarde la page Logement : CROUS, résidences privées, colocation... Pense aussi à demander les APL !"
+            ]
+        },
+        {
+            "tag": "crous",
+            "patterns": [
+                "crous",
+                "residence universitaire"
+            ],
+            "responses": [
+                "Les résidences CROUS sont souvent les moins chères. La demande se fait avec le dossier social étudiant, le plus tôt possible."
+            ]
+        },
+        {
+            "tag": "apl",
+            "patterns": [
+                "apl",
+                "caf",
+                "aide au logement"
+            ],
+            "responses": [
+                "Les APL se demandent en ligne sur caf.fr dès que tu as ton bail. Même en colocation, tu peux y avoir droit !"
+            ]
+        },
+        {
+            "tag": "guarantor",
+            "patterns": [
+                "garant",
+                "visale",
+                "caution"
+            ],
+            "responses": [
+                "Pas de garant ? La garantie Visale est gratuite et acceptée par beaucoup de propriétaires."
+            ]
+        },
+        {
+            "tag": "transport",
+            "patterns": [
+                "transport",
+                "tram",
+                "bus",
+                "tbm",
+                "deplacer"
+            ],
+            "responses": [
+                "Le réseau TBM regroupe le tram (lignes A, B, C et D), le bus, le BAT³ et les vélos. Tout est sur la page Transports."
+            ]
+        },
+        {
+            "tag": "transport_price",
+            "patterns": [
+                "coute le tram",
+                "prix du tram",
+                "ticket",
+                "abonnement"
+            ],
+            "responses": [
+                "Le ticket 1 voyage coûte 1,90 €. Si tu prends le tram tous les jours, l'abonnement jeunes est bien plus intéressant : regarde sur infotbm.com."
+            ]
+        },
+        {
+            "tag": "bike",
+            "patterns": [
+                "velo"
+            ],
+            "responses": [
+                "Bordeaux est plate et pleine de pistes cyclables : le vélo est souvent le plus rapide pour aller en cours !"
+            ]
+        },
+        {
+            "tag": "food",
+            "patterns": [
+                "manger",
+                "repas",
+                "resto",
+                "restaurant",
+                "faim"
+            ],
+            "responses": [
+                "Le restaurant universitaire du CROUS propose un repas complet à 3,30 € (1 € pour les boursiers). Difficile de faire moins cher !"
+            ]
+        },
+        {
+            "tag": "groceries",
+            "patterns": [
+                "courses",
+                "supermarche",
+                "marche"
+            ],
+            "responses": [
+                "Astuce : passe au marché des Capucins en fin de matinée et essaie les applications anti-gaspillage."
+            ]
+        },
+        {
+            "tag": "job",
+            "patterns": [
+                "job",
+                "travail",
+                "travailler",
+                "argent"
+            ],
+            "responses": [
+                "Pour un job étudiant, regarde Jobaviz, la plateforme du CROUS, ou propose des cours particuliers."
+            ]
+        },
+        {
+            "tag": "scholarship",
+            "patterns": [
+                "bourse",
+                "boursier"
+            ],
+            "responses": [
+                "La bourse sur critères sociaux se demande chaque année avec le dossier social étudiant sur messervices.etudiant.gouv.fr."
+            ]
+        },
+        {
+            "tag": "budget",
+            "patterns": [
+                "budget",
+                "reste a vivre",
+                "calculer"
+            ],
+            "responses": [
+                "Essaie notre simulateur de budget : il calcule ton reste à vivre et garde l'historique de tes essais."
+            ]
+        }
+    ]
+}
