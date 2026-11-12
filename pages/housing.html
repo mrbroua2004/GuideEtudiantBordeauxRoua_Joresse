@@ -3,57 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trouver un logement étudiant à Bordeaux : types de logement, loyers indicatifs et aides.">
     <title>Logement - Guide de l'étudiant à Bordeaux</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+    <script src="../js/housing.js" defer></script>
 </head>
 <body>
+
     <header class="site-header">
-        <a href="index.html" class="site-title">Guide de l'étudiant à Bordeaux</a>
-        <nav class="main-nav">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.svg" alt="Logo du guide" width="46" height="46">
+            <span>Guide de l'étudiant à Bordeaux</span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="housing.html">Logement</a></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="housing.html" aria-current="page">Logement</a></li>
                 <li><a href="transport.html">Transports</a></li>
                 <li><a href="savings.html">Économies</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
             </ul>
         </nav>
+        <div class="header-tools">
+            <button type="button" class="icon-button" id="theme-toggle" aria-label="Activer le mode sombre">🌙</button>
+            <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+        </div>
     </header>
- 
-    <main class="page-container">
-        <section class="hero-card">
-            <div class="hero-content">
-                <span class="hero-subtitle">SE LOGER À BORDEAUX</span>
-                <h1>Trouve ton<br>logement idéal.</h1>
-                <p>Résidences étudiantes, colocations, appartements :<br>tous les conseils pour bien t'installer.</p>
+
+    <main>
+        <section class="page-intro">
+            <h1>Se loger à Bordeaux</h1>
+            <p>Les solutions pour trouver un toit, ce qu'elles coûtent et les aides pour payer moins.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>Les types de logement</h2>
+            <p>Passe la souris (ou appuie) sur un post-it pour découvrir ses avantages et ses inconvénients.</p>
+            <ol id="postit">
+                <li class="postit-item" tabindex="0">Résidence CROUS
+                    <ul>
+                        <li>Loyer parmi les moins chers</li>
+                        <li>Attribution selon des critères sociaux</li>
+                        <li>Demande à faire tôt via le dossier social étudiant</li>
+                    </ul>
+                </li>
+                <li class="postit-item" tabindex="0">Résidence privée
+                    <ul>
+                        <li>Logement meublé et services inclus</li>
+                        <li>Souvent proche des écoles</li>
+                        <li>Plus cher qu'au CROUS</li>
+                    </ul>
+                </li>
+                <li class="postit-item" tabindex="0">Colocation
+                    <ul>
+                        <li>Loyer partagé</li>
+                        <li>Ambiance conviviale</li>
+                        <li>Bien choisir ses colocataires</li>
+                    </ul>
+                </li>
+                <li class="postit-item" tabindex="0">Studio privé
+                    <ul>
+                        <li>Indépendance totale</li>
+                        <li>Garant souvent demandé</li>
+                        <li>Marché tendu à la rentrée</li>
+                    </ul>
+                </li>
+                <li class="postit-item" tabindex="0">Chez l'habitant
+                    <ul>
+                        <li>Chambre chez un particulier</li>
+                        <li>Loyer modéré</li>
+                        <li>Moins d'intimité</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section class="reveal">
+            <h2>Combien ça coûte ?</h2>
+            <div class="table-wrapper">
+                <table>
+                    <caption>Loyers mensuels indicatifs à Bordeaux</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Type de logement</th>
+                            <th scope="col">Loyer indicatif</th>
+                            <th scope="col">Point fort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Résidence CROUS</td>
+                            <td>200 à 450 €</td>
+                            <td>Le moins cher</td>
+                        </tr>
+                        <tr>
+                            <td>Colocation (une chambre)</td>
+                            <td>400 à 550 €</td>
+                            <td>Charges partagées</td>
+                        </tr>
+                        <tr>
+                            <td>Studio privé</td>
+                            <td>550 à 700 €</td>
+                            <td>Indépendance</td>
+                        </tr>
+                        <tr>
+                            <td>Résidence privée</td>
+                            <td>550 à 750 €</td>
+                            <td>Services inclus</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Ordres de grandeur, à comparer avec les annonces du moment.</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </section>
 
-        <section class="home-sections">
-            <h2>LES TYPES DE LOGEMENT</h2>
-            <div class="cards-grid">
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Résidences CROUS</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Colocation</h3></div>
-                </a>
-                <a href="#" class="home-card-link">
-                    <div class="home-card-small"><h3>Appartement</h3></div>
-                </a>
+        <section class="reveal">
+            <h2>Les aides pour payer moins</h2>
+            <div class="highlight">
+                <p>Bon à savoir : la plupart des étudiants locataires peuvent recevoir une aide au logement, même en colocation.</p>
             </div>
+            <ul>
+                <li>Les <strong>APL</strong> versées par la <a href="https://www.caf.fr">CAF</a> : la demande se fait en ligne dès l'entrée dans le logement.</li>
+                <li>La garantie <a href="https://www.visale.fr">Visale</a> : un garant gratuit quand on n'en a pas.</li>
+                <li>Le <a href="https://www.crous-bordeaux.fr">CROUS de Bordeaux-Aquitaine</a> pour les logements en résidence universitaire.</li>
+            </ul>
+        </section>
+
+        <section class="reveal" id="checklist-section">
+            <h2>Ma checklist de dossier</h2>
+            <p>Coche les documents déjà prêts : ta progression est gardée même si tu fermes la page.</p>
+            <div class="checklist" id="checklist">
+                <label><input type="checkbox" value="id"> Pièce d'identité</label>
+                <label><input type="checkbox" value="school"> Certificat de scolarité</label>
+                <label><input type="checkbox" value="guarantor"> Justificatifs du garant (ou Visale)</label>
+                <label><input type="checkbox" value="income"> Justificatifs de revenus ou de bourse</label>
+                <label><input type="checkbox" value="rib"> RIB</label>
+                <label><input type="checkbox" value="insurance"> Attestation d'assurance habitation</label>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+            <p id="progress-text" aria-live="polite">0 document prêt sur 6</p>
         </section>
     </main>
- 
+
     <footer class="site-footer">
-        <nav>
+        <nav class="footer-nav" aria-label="Navigation du bas de page">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="budget.html">Simulateur budget</a></li>
                 <li><a href="about.html">À propos</a></li>
             </ul>
         </nav>
-        <p>Projet TI504N - Efrei Bordeaux - 2026</p>
+        <p>&copy; <span id="year">2026</span> Joresse Brandy Fangouo Tatsing &amp; Roua - Projet TI504N - Efrei Bordeaux</p>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+
 </body>
 </html>
