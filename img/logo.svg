@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Logo Guide de l'étudiant à Bordeaux</title>
+  <circle cx="32" cy="32" r="30" fill="#7B1E3A"/>
+  <path d="M40 14a20 20 0 1 0 0 36a16 16 0 1 1 0-36z" fill="#C9A96E"/>
+  <text x="38" y="37" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#FAF6F0" text-anchor="middle">BDX</text>
+</svg>
