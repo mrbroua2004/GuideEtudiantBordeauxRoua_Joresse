@@ -1,9 +1,7 @@
-// contact.js : validation du formulaire de contact
-
 const form = document.getElementById("contact-form");
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Affiche (ou retire) un message d'erreur sous un champ
+
 function setError(input, message) {
     const row = input.closest(".form-row") || input.parentElement;
     let error = row.querySelector(".error-message");
