@@ -1,5 +1,3 @@
-// savings.js : astuce du jour tirée au hasard
-
 const tips = [
     "Le repas au restaurant universitaire est souvent le moins cher de la ville : pense à ta carte étudiante.",
     "Fais une liste avant d'aller au supermarché : tu éviteras les achats imprévus.",
@@ -15,7 +13,7 @@ let lastIndex = -1;
 
 function showRandomTip() {
     let index;
-    // On tire un nouveau numéro tant qu'il est identique au précédent
+    
     do {
         index = Math.floor(Math.random() * tips.length);
     } while (index === lastIndex);
