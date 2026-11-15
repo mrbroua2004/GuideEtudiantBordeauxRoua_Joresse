@@ -1,7 +1,3 @@
-// main.js : fonctionnalités communes à toutes les pages
-// Chargé avec "defer" : le HTML est entièrement lu avant l'exécution.
-
-// ---- 1. Mode sombre (mémorisé dans localStorage) ----
 function applyTheme(theme) {
     const button = document.getElementById("theme-toggle");
     document.documentElement.setAttribute("data-theme", theme);
@@ -36,7 +32,6 @@ function initTheme() {
     });
 }
 
-// ---- 2. Menu burger sur mobile ----
 function initMenu() {
     const button = document.getElementById("menu-toggle");
     const nav = document.getElementById("main-nav");
@@ -50,7 +45,6 @@ function initMenu() {
     });
 }
 
-// ---- 3. Bouton "retour en haut" ----
 function initBackToTop() {
     const button = document.getElementById("back-to-top");
     if (!button) {
@@ -68,7 +62,6 @@ function initBackToTop() {
     });
 }
 
-// ---- 4. Apparition des sections au défilement ----
 function initReveal() {
     const elements = document.querySelectorAll(".reveal");
     try {
@@ -91,7 +84,6 @@ function initReveal() {
     }
 }
 
-// ---- 5. Année automatique dans le footer ----
 function initYear() {
     const year = document.getElementById("year");
     if (year) {
