@@ -1,5 +1,3 @@
-// budget.js : simulateur de budget (inspiré de submitQuiz() du TP3)
-
 const MAX_TRIES = 5;
 let tryNumber = 0;
 
@@ -27,7 +25,6 @@ function showFormMessage(text, type) {
     message.hidden = false;
 }
 
-// Vérifie que tous les champs sont remplis (autonomie du TP3)
 function checkFields() {
     const inputs = document.querySelectorAll("#budget-form input[type='number']");
     let allFilled = true;
@@ -54,7 +51,6 @@ function calculateBudget() {
         incomes += getValue(id);
     });
 
-    // 2. Total des dépenses (on garde aussi le détail pour le graphique)
     let expenses = 0;
     const details = {};
     for (const id in expenseFields) {
