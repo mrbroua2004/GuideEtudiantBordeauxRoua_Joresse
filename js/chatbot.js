@@ -1,6 +1,3 @@
-// chatbot.js : assistant étudiant (repris de la structure du TP4)
-
-// ---- 1. Classe qui garde l'historique des messages ----
 class ChatHistory {
     constructor() {
         this.messages = [];
@@ -17,7 +14,7 @@ class ChatHistory {
 
 const historyMessages = new ChatHistory();
 
-// ---- 2. Récupérer les intentions dans le fichier JSON ----
+
 function fetchJSON(url) {
     fetch(url)
         .then(response => {
@@ -38,7 +35,7 @@ function fetchJSON(url) {
         });
 }
 
-// ---- 3. Algorithme d'envoi d'un message ----
+
 function sendMessage(intents) {
     const input = document.getElementById("user-input");
     // a. Récupérer la saisie de l'utilisateur
@@ -46,36 +43,36 @@ function sendMessage(intents) {
     if (messageUser === "") {
         return;
     }
-    // b. Afficher le message de l'utilisateur
+    
     showMessage(messageUser, "user");
-    // c. Obtenir la réponse du bot
+    
     const response = processMessage(intents, messageUser);
-    // d. Afficher la réponse avec un petit délai, comme si le bot écrivait
+    
     setTimeout(function () {
         showMessage(response, "bot");
     }, 400);
-    // e. Effacer le champ de saisie
+    
     input.value = "";
 }
 
-// ---- 4. Afficher un message dans la boîte de chat ----
+
 function showMessage(message, type) {
     const chatBox = document.getElementById("chat-box");
     const bubble = document.createElement("p");
     bubble.classList.add("message", type);
-    // textContent (et non innerHTML) : le texte tapé n'est jamais interprété comme du HTML
+    
     bubble.textContent = message;
     chatBox.appendChild(bubble);
     chatBox.scrollTop = chatBox.scrollHeight;
     historyMessages.addMessage({ message: message, sender: type });
 }
 
-// Enlève les accents et met en minuscules : "Où" et "ou" sont reconnus pareil
+
 function normalize(text) {
     return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-// ---- 5. Trouver la réponse (fonction du TP4, améliorée avec normalize) ----
+
 function processMessage(intents, message) {
     let response = "Je suis désolé, je ne suis pas sûr de comprendre. Essaie avec : logement, tram, manger, bourse ou budget.";
     intents.forEach(intent => {
@@ -88,7 +85,7 @@ function processMessage(intents, message) {
     return response;
 }
 
-// ---- 6. Sauvegarder et recharger l'historique (sessionStorage) ----
+
 function saveMessages() {
     try {
         sessionStorage.setItem("chatHistory", JSON.stringify(historyMessages.getHistory()));
@@ -113,18 +110,18 @@ function loadMessages() {
     }
 }
 
-// ---- 7. Événements ----
+
 window.addEventListener("beforeunload", saveMessages);
 window.addEventListener("load", loadMessages);
 
-// Touche Entrée dans le champ de saisie
+
 document.getElementById("user-input").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         fetchJSON("json/intents.json");
     }
 });
 
-// Boutons de questions rapides
+
 document.querySelectorAll("#chat-suggestions button").forEach(function (button) {
     button.addEventListener("click", function () {
         document.getElementById("user-input").value = button.dataset.question;
