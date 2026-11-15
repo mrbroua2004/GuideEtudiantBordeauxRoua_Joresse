@@ -1,5 +1,3 @@
-// housing.js : checklist du dossier de logement (sauvegardée dans localStorage)
-
 const checkboxes = document.querySelectorAll("#checklist input[type='checkbox']");
 
 function updateProgress() {
