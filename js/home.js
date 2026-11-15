@@ -1,6 +1,3 @@
-// home.js : page d'accueil (message de bienvenue, carrousel, chiffres animés)
-
-// ---- 1. Message de bienvenue (TP3 : window.onload + createElement) ----
 function showWelcome() {
     try {
         if (sessionStorage.getItem("welcomeShown")) {
@@ -27,7 +24,6 @@ function showWelcome() {
     }, 6000);
 }
 
-// ---- 2. Carrousel (setInterval, comme le décompte du TP3) ----
 let currentSlide = 0;
 let carouselInterval;
 
@@ -56,7 +52,6 @@ function initCarousel() {
         return;
     }
 
-    // Création d'un point par diapositive
     slides.forEach(function (slide, index) {
         const dot = document.createElement("button");
         dot.type = "button";
@@ -77,7 +72,6 @@ function initCarousel() {
         goToSlide(currentSlide + 1);
     });
 
-    // Pause quand la souris est sur le carrousel
     carousel.addEventListener("mouseenter", function () {
         clearInterval(carouselInterval);
     });
@@ -86,7 +80,6 @@ function initCarousel() {
     startCarousel();
 }
 
-// ---- 3. Chiffres qui défilent quand ils deviennent visibles ----
 function animateNumber(element) {
     const target = Number(element.dataset.target);
     const steps = 40;
