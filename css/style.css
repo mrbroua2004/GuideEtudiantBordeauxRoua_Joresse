@@ -971,3 +971,42 @@ textarea:focus {
         max-width: 90%;
     }
 }
+
+
+/* ===== 20. Photos des rubriques (cartes de l'accueil et haut des pages) ===== */
+.card-img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s;
+}
+
+.card:hover .card-img {
+    transform: scale(1.04);
+}
+
+.page-photo {
+    margin: 0 0 25px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.page-photo img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .card-img {
+        height: 120px;
+    }
+
+    .page-photo img {
+        height: 200px;
+    }
+}
